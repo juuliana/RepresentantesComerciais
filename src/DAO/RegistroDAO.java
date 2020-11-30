@@ -12,10 +12,11 @@ import javax.swing.JTextField;
 
 import Entidades.Registro;
 import Entidades.Representante;
+import javax.swing.JFormattedTextField;
 
 public class RegistroDAO {
 	
-	public void cadastrarRegistro(JTextField assunto, JTextField nome, JTextField contato, JTextField hora, JTextField data, JTextField representante) {
+	public void cadastrarRegistro(JTextField assunto, JTextField nome, JFormattedTextField contato, JTextField hora, JFormattedTextField data, JTextField representante) {
 		Registro reg = new Registro();
         
         reg.setAssunto(assunto.getText());

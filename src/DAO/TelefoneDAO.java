@@ -9,10 +9,11 @@ import javax.swing.JTextField;
 
 import Entidades.Representante;
 import Entidades.Telefone;
+import javax.swing.JFormattedTextField;
 
 public class TelefoneDAO {
 	
-	public void cadastrarTelefone(JTextField numero, JComboBox<?> tipo, JTextField representante) {
+	public void cadastrarTelefone(JFormattedTextField numero, JComboBox<?> tipo, JTextField representante) {
 		Telefone t = new Telefone();
 
         t.setNumero(numero.getText());

@@ -7,11 +7,12 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 import Entidades.Representante;
+import javax.swing.JFormattedTextField;
 import javax.swing.JTable;
 
 public class RepresentanteDAO {
 	
-		public void cadastrarRepresentante(JTextField nome, JTextField cpf, JTextField empresa) {
+		public void cadastrarRepresentante(JTextField nome, JFormattedTextField cpf, JTextField empresa) {
 	
 			Representante rep = new Representante();
 			
