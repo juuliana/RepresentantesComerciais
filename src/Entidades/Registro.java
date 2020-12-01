@@ -21,7 +21,7 @@ public class Registro {
 	
 	@ManyToOne
 	@JoinColumn(name = "representanteID")
-	private Representante representante;
+	private Telefone telefone;
 	
 	private String nomeContato;
 	private String telContato;
@@ -50,11 +50,11 @@ public class Registro {
 	public void setAssunto(String assunto) {
 		this.assunto = assunto;
 	}
-	public Representante getRepresentante() {
-		return representante;
+	public Telefone getTelefone() {
+		return telefone;
 	}
-	public void setRepresentante(Representante representante) {
-		this.representante = representante;
+	public void setTelefone(Telefone telefone) {
+		this.telefone = telefone;
 	}
 	public String getNomeContato() {
 		return nomeContato;
