@@ -12,11 +12,12 @@ import javax.swing.JTextField;
 
 import Entidades.Registro;
 import Entidades.Representante;
+import Entidades.Telefone;
 import javax.swing.JFormattedTextField;
 
 public class RegistroDAO {
 	
-	public void cadastrarRegistro(JTextField assunto, JTextField nome, JFormattedTextField contato, JTextField hora, JFormattedTextField data, JTextField representante) {
+	public void cadastrarRegistro(JTextField assunto, JTextField nome, JFormattedTextField contato, JTextField hora, JFormattedTextField data, JTextField telefone) {
 		Registro reg = new Registro();
         
         reg.setAssunto(assunto.getText());
@@ -36,7 +37,7 @@ public class RegistroDAO {
 	        }
 	        catch(ParseException e)
 	        {
-	          System.out.println("Data não selecionada");
+	          System.out.println("Data inválida!");
 	        }
 	       
 	        EntityManagerFactory emf
@@ -44,8 +45,8 @@ public class RegistroDAO {
 	        EntityManager em = emf.createEntityManager();
 	        
 	        em.getTransaction().begin();
-	        Representante rep = em.find(Representante.class, Integer.parseInt(representante.getText()));
-	        reg.setRepresentante(rep);
+	        Telefone tel = em.find(Telefone.class, Integer.parseInt(telefone.getText()));
+	        reg.setTelefone(tel);
 	        em.persist(reg);
 	        em.getTransaction().commit();
 	        em.close();
@@ -58,7 +59,7 @@ public class RegistroDAO {
 	        contato.setText(null);
 	        hora.setText(null);
 	        data.setText(null);
-	        representante.setText(null);
+	        telefone.setText(null);
         }
 	}
 }

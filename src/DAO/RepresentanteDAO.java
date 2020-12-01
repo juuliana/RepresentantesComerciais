@@ -12,7 +12,7 @@ import javax.swing.JTable;
 
 public class RepresentanteDAO {
 	
-		public void cadastrarRepresentante(JTextField nome, JFormattedTextField cpf, JTextField empresa) {
+	public void cadastrarRepresentante(JTextField nome, JFormattedTextField cpf, JTextField empresa) {
 	
 			Representante rep = new Representante();
 			
@@ -40,4 +40,22 @@ public class RepresentanteDAO {
 		        empresa.setText(null);
 	        }
 	}
+        
+        public void deletarRepresentante(JTextField id) {
+            
+            if(JOptionPane.showConfirmDialog(null, "Você realmente deseja excluir esse Representante de seu cadastro?", "Alerta de exclusão", JOptionPane.YES_NO_OPTION)==0){
+
+                EntityManagerFactory emf = Persistence.createEntityManagerFactory("eduvale_pu");
+		EntityManager em = emf.createEntityManager();
+
+                em.getTransaction().begin();
+                Representante rep = em.find(Representante.class, Integer.parseInt(id.getText()));
+                em.remove(rep);
+                em.getTransaction().commit();
+                emf.close();
+                
+                JOptionPane.showMessageDialog(null, "Representante excluído com sucesso!");
+                id.setText(null);
+            }
+        }  
 }
