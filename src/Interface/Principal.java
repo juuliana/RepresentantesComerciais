@@ -41,6 +41,7 @@ public class Principal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Sistema Representantes Comerciais");
+        setResizable(false);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("Bem-vindo ao Sistema para Representantes Comerciais");
@@ -85,7 +86,7 @@ public class Principal extends javax.swing.JFrame {
         jLabel7.setText("Telefones");
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 2, 14)); // NOI18N
-        jLabel8.setText("Aqui você poderá realizar o cadastro dos Representantes das Empresas e ter acesso aos Registros realizados com os seus contatos.");
+        jLabel8.setText("qui você poderá realizar o cadastro dos Representantes das Empresas, de seus telefones e também registrar os contatos realizados.");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
