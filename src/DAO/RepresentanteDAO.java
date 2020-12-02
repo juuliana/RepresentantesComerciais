@@ -24,20 +24,28 @@ public class RepresentanteDAO {
 				JOptionPane.showMessageDialog(null, "Preencha todos os campos obrigatórios!");
 			}else{
 
-		        EntityManagerFactory emf = Persistence.createEntityManagerFactory("eduvale_pu");
-		        EntityManager em = emf.createEntityManager();
-		        
-		        em.getTransaction().begin();
-		        em.persist(rep); 
-		        em.getTransaction().commit();
-		        em.close();
-		        emf.close();
-		        
-		        JOptionPane.showMessageDialog(null, "Representante cadastrado com sucesso!");
-		        
-		        nome.setText(null);
-		        cpf.setText(null);
-		        empresa.setText(null);
+	
+                            Object[] options = { "Confirmar", "Cancelar" };
+                            int opcao = JOptionPane.showOptionDialog(null, "Você confirma o cadastro?", "Informação", JOptionPane.DEFAULT_OPTION, JOptionPane.WARNING_MESSAGE, null, options, options[0]);
+
+                            if (opcao == 0){
+                                EntityManagerFactory emf = Persistence.createEntityManagerFactory("eduvale_pu");
+                                EntityManager em = emf.createEntityManager();
+
+                                em.getTransaction().begin();
+                                em.persist(rep); 
+                                em.getTransaction().commit();
+                                em.close();
+                                emf.close();
+
+                                JOptionPane.showMessageDialog(null, "Representante cadastrado com sucesso!");
+                            
+                                nome.setText(null);
+                                cpf.setText(null);
+                                empresa.setText(null);
+                            } else {
+                                JOptionPane.showMessageDialog(null, "O representante não foi cadastrado!");
+                            }
 	        }
 	}
         
